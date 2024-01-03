@@ -5,17 +5,23 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/app_export.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
-void main()async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  Future.wait([
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]),
-    PrefUtils().init()
-  ]).then((value) {
+  // await Firebase.initializeApp();
+
+  // Wrap the initialization in a try-catch block to handle errors.
+  try {
+    await Future.wait([
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+      ]),
+      PrefUtils().init()
+    ]);
+
     runApp(MyApp());
-  });
+  } catch (error) {
+    print("Error during initialization: $error");
+  }
 }
 
 class MyApp extends StatelessWidget {

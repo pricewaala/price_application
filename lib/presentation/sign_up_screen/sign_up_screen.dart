@@ -16,7 +16,7 @@ class SignUpScreen extends StatelessWidget {
     key: key,
   );
 
-  final CollectionReference usersCollection = FirebaseFirestore.instance.collection('users');
+  // final CollectionReference usersCollection = FirebaseFirestore.instance.collection('users');
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
