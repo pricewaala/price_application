@@ -1,0 +1,10 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:equatable/equatable.dart';/// This class defines the variables used in the [rate_product_one1_screen],
+/// and is typically used to hold data that is passed between different parts of the application.
+class RateProductOne1Model extends Equatable {RateProductOne1Model() {  }
+
+RateProductOne1Model copyWith() { return RateProductOne1Model(
+); } 
+@override List<Object?> get props => [];
+ }

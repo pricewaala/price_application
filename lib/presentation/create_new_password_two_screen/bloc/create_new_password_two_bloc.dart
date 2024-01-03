@@ -1,0 +1,7 @@
+import 'package:equatable/equatable.dart';import 'package:flutter/material.dart';import '/core/app_export.dart';import 'package:price_s_application2/presentation/create_new_password_two_screen/models/create_new_password_two_model.dart';part 'create_new_password_two_event.dart';part 'create_new_password_two_state.dart';/// A bloc that manages the state of a CreateNewPasswordTwo according to the event that is dispatched to it.
+class CreateNewPasswordTwoBloc extends Bloc<CreateNewPasswordTwoEvent, CreateNewPasswordTwoState> {CreateNewPasswordTwoBloc(CreateNewPasswordTwoState initialState) : super(initialState) { on<CreateNewPasswordTwoInitialEvent>(_onInitialize); on<ChangePasswordVisibilityEvent>(_changePasswordVisibility); on<ChangePasswordVisibilityEvent1>(_changePasswordVisibility1); }
+
+_changePasswordVisibility(ChangePasswordVisibilityEvent event, Emitter<CreateNewPasswordTwoState> emit, ) { emit(state.copyWith(isShowPassword: event.value)); } 
+_changePasswordVisibility1(ChangePasswordVisibilityEvent1 event, Emitter<CreateNewPasswordTwoState> emit, ) { emit(state.copyWith(isShowPassword1: event.value)); } 
+_onInitialize(CreateNewPasswordTwoInitialEvent event, Emitter<CreateNewPasswordTwoState> emit, ) async  { emit(state.copyWith(passwordController: TextEditingController(), confirmpasswordController: TextEditingController(), isShowPassword: true, isShowPassword1: true)); } 
+ }
